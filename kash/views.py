@@ -39,7 +39,7 @@ class NewsDetailView(APIView):
     def get_object(self,pk):
         try:
             return News.objects.get(id=pk)
-        except Post.DoesNotExist:
+        except News.DoesNotExist:
             raise Http404
 
     def get(self,request,pk,format=None):
